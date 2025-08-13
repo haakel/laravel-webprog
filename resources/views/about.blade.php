@@ -11,6 +11,8 @@
 <body>
     <h1></h1>About Page</h1>
     <p>This is the about page of our application.</p>
+    {{-- <p>{{ $text }} - {{ $name }}</p> --}}
+    <p>{{ $str }} - {{ $str2 }}</p>
 </body>
 
 </html>
