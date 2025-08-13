@@ -12,11 +12,19 @@ Route::get('/', function () {
 //     return "<a href='" . route('contact', [15, "ABC"]) . "'> Contact Page </a>";
 // })->name('about');
 
-Route::get("/about", function () {
-    $srt = "test about";
-    $srt2 = "test2 about2";
-    return view('about',["text"=> $srt , "text2" => $str2]);
-})->name('about');
+// Route::get("/about", function () {
+//     $srt = "test about";
+//     $srt2 = "test2 about2";
+//     return view('about',["text"=> $srt , "text2" => $str2]);
+// })->name('about');
+
+Route::get('/about', function () {
+    $str = 'webprog.io';
+    $str2 = 'ali sheikh';
+
+    // return view('about', ['text' => $str, 'name' => $str2]);
+    return view('about', compact('str', 'str2'));
+});
 
 Route::get("/contact", function () {
     return view('contact.text.index');
