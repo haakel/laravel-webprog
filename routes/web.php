@@ -2,10 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    $blogs = [
+        ['title' => 'Blog 1', 'content' => 'Content of blog 1',"status" => "1"],
+        ['title' => 'Blog 2', 'content' => 'Content of blog 2', "status" => "0"],
+        ['title' => 'Blog 3', 'content' => 'Content of blog 3', "status" => "1"],
+        ['title' => 'Blog 4', 'content' => 'Content of blog 4', "status" => "0"],
+        ['title' => 'Blog 5', 'content' => 'Content of blog 5', "status" => "1"]
+    ];
 
+    return view('home',compact('blogs'));
+})->name('home');
 // Route::get('/about', function () {
 //     // return "About Page";
 //     // return "<a href='/contact'> Contact Page </a>";
@@ -26,10 +36,12 @@ Route::get('/about', function () {
     return view('about', compact('str', 'str2'));
 });
 
+// Route::get("/contact", function () {
+//     return view('contact.text.index');
+// })->name('about');
 Route::get("/contact", function () {
-    return view('contact.text.index');
+    return view('contact');
 })->name('about');
-
 // Route::post("/", function () {
 //     return "Post Request";
 // })->name('post');

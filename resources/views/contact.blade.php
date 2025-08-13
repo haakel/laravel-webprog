@@ -12,15 +12,12 @@
 </header>
 
 <body>
-    <h1>About Page</h1>
-    <p>This is the about page of our application.</p>
-    {{-- <p>{{ $text }} - {{ $name }}</p>
-    <p>{{ $str }} - {{ $str2 }}</p> --}}
-
-    <footer>
-        <p>Footer content goes here.</p>
-    </footer>
-
+    <h1> Contact Page</h1>
+    <p>Welcome to the contact page of our application.</p>
 </body>
+
+<footer>
+    <p>Footer content goes here.</p>
+</footer>
 
 </html>
