@@ -14,7 +14,8 @@ Route::get('/', function () {
 
 Route::get("/about", function () {
     $srt = "test about";
-    return view('about',["text"=> $srt ]);
+    $srt2 = "test2 about2";
+    return view('about',["text"=> $srt , "text2" => $str2]);
 })->name('about');
 
 Route::get("/contact", function () {
