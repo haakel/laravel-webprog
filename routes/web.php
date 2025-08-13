@@ -13,7 +13,8 @@ Route::get('/', function () {
 // })->name('about');
 
 Route::get("/about", function () {
-    return view('about');
+    $srt = "test about";
+    return view('about',["text"=> $srt ]);
 })->name('about');
 
 Route::get("/contact", function () {
