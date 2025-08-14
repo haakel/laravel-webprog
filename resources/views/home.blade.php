@@ -9,7 +9,7 @@
         <h1>Home Page</h1>
         <p>Welcome to the home page of our application.</p>
     </body>
-    <ul>
+    {{-- <ul>
         @foreach ($blogs as $blog)
             @if ($blog['status'] == '1')
                 <li>
@@ -22,7 +22,7 @@
                     <p>This blog is not available.</p>
             @endif
         @endforeach
-    </ul>
+    </ul> --}}
 
     {{-- <ul>
         @for ($i = 0; $i < count($blogs); $i++)

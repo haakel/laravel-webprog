@@ -1,21 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // })->name('home');
-Route::get('/', function () {
-    $blogs = [
-        ['title' => 'Blog 1', 'content' => 'Content of blog 1',"status" => "1"],
-        ['title' => 'Blog 2', 'content' => 'Content of blog 2', "status" => "0"],
-        ['title' => 'Blog 3', 'content' => 'Content of blog 3', "status" => "1"],
-        ['title' => 'Blog 4', 'content' => 'Content of blog 4', "status" => "0"],
-        ['title' => 'Blog 5', 'content' => 'Content of blog 5', "status" => "1"]
-    ];
 
-    return view('home',compact('blogs'));
-})->name('home');
+// Route::get('/', function () {
+//     $blogs = [
+//         ['title' => 'Blog 1', 'content' => 'Content of blog 1',"status" => "1"],
+//         ['title' => 'Blog 2', 'content' => 'Content of blog 2', "status" => "0"],
+//         ['title' => 'Blog 3', 'content' => 'Content of blog 3', "status" => "1"],
+//         ['title' => 'Blog 4', 'content' => 'Content of blog 4', "status" => "0"],
+//         ['title' => 'Blog 5', 'content' => 'Content of blog 5', "status" => "1"]
+//     ];
+
+//     return view('home',compact('blogs'));
+// })->name('home');
+
+Route::get('/',[HomeController::class,"index"])->name('home');
+
+
 // Route::get('/about', function () {
 //     // return "About Page";
 //     // return "<a href='/contact'> Contact Page </a>";
@@ -70,3 +77,5 @@ Route::group(['prefix' => 'users'], function () {
 Route::fallback(function () {
     return "404 Not Found";
 });
+
+Route::resource('blogs', BlogController::class);
