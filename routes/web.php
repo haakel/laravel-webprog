@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -21,6 +22,8 @@ use App\Http\Controllers\HomeController;
 // })->name('home');
 
 Route::get('/',[HomeController::class,"index"])->name('home');
+Route::get('/login',[LoginController::class,"index"])->name('login');
+Route::post('/login',[LoginController::class,"login"])->name('login.post');
 
 
 // Route::get('/about', function () {
@@ -35,20 +38,20 @@ Route::get('/',[HomeController::class,"index"])->name('home');
 //     return view('about',["text"=> $srt , "text2" => $str2]);
 // })->name('about');
 
-Route::get('/about', function () {
-    $str = 'webprog.io';
-    $str2 = 'ali sheikh';
+// Route::get('/about', function () {
+//     $str = 'webprog.io';
+//     $str2 = 'ali sheikh';
 
-    // return view('about', ['text' => $str, 'name' => $str2]);
-    return view('about', compact('str', 'str2'));
-});
+//     // return view('about', ['text' => $str, 'name' => $str2]);
+//     return view('about', compact('str', 'str2'));
+// });
 
 // Route::get("/contact", function () {
 //     return view('contact.text.index');
 // })->name('about');
-Route::get("/contact", function () {
-    return view('contact');
-})->name('about');
+// Route::get("/contact", function () {
+//     return view('contact');
+// })->name('about');
 // Route::post("/", function () {
 //     return "Post Request";
 // })->name('post');
@@ -59,23 +62,22 @@ Route::get("/contact", function () {
 //     return "Contact Page, id: $id, name: $name";
 // })->name('contact');
 
-Route::group(['prefix' => 'users'], function () {
-    Route::get('/', function () {
-        return "Users List";
-    });
+// Route::group(['prefix' => 'users'], function () {
+//     Route::get('/', function () {
+//         return "Users List";
+//     });
 
-    Route::get('/create', function () {
-        return "Users Create";
-    });
+//     Route::get('/create', function () {
+//         return "Users Create";
+//     });
 
-    Route::get('/{id}', function ($id) {
-        return "Users id: $id";
-    });
-});
+//     Route::get('/{id}', function ($id) {
+//         return "Users id: $id";
+//     });
+// });
 
+// Route::resource('blogs', BlogController::class);
 
-Route::fallback(function () {
-    return "404 Not Found";
-});
-
-Route::resource('blogs', BlogController::class);
+// Route::fallback(function () {
+//     return "404 Not Found";
+// });
