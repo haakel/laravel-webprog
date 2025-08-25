@@ -24,6 +24,9 @@ class PostController extends Controller
         // ]);
 
         $posts = Post::all(); // Fetch all posts from the database
+        // $posts = Post::withoutGlobalScope('is_published')->get();
+        // $posts = Post::Published()->where("id", ">" , "3")->get();
+        // $posts = Post::Published(0)->where("id", ">" , "3")->get();
         // dd($posts); // This will dump the post data to the screen for debugging
 
         return view('post', compact('posts'));

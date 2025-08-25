@@ -16,7 +16,8 @@
     @if (isset($posts))
         <ul>
             @foreach ($posts as $p)
-                <li>{{ $p->title }} - {{ $p->content }}</li>
+                {{-- <li>{{ $p->title }} - {{ $p->content }}</li> --}}
+                <li>{{ $p->title }}</li>
             @endforeach
         </ul>
     @else
