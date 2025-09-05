@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 
 // Route::get('/', function () {
@@ -23,10 +24,15 @@ use App\Http\Controllers\LoginController;
 // })->name('home');
 
 Route::get('/',[HomeController::class,"index"])->name('home');
-Route::get('/login',[LoginController::class,"index"])->name('login');
-Route::post('/login',[LoginController::class,"login"])->name('login.post');
+// Route::get('/login',[LoginController::class,"index"])->name('login');
+// Route::post('/login',[LoginController::class,"login"])->name('login.post');
 
-Route::get('/post',[PostController::class,"index"])->name('post');
+// Route::get('/post',[PostController::class,"index"])->name('post');
+
+
+Route::get('/upload-image',[ImageController::class,"uploadForm"])->name('upload.form');
+Route::post('/upload-image',[ImageController::class,"upload"])->name('upload');
+Route::get('/delete-image',[ImageController::class,"delete"])->name('delete');
 
 // Route::get('/about', function () {
 //     // return "About Page";

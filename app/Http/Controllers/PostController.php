@@ -8,27 +8,27 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function index()
-    {
-    //     $post =DB::table('posts')->get(); 
-    //    $post = DB::table('posts')->insert([
-    //         'title' => 'Sample Post',
-    //         'content' => 'This is a sample post content.',
-    //         'is_published' => 1,
-    //     ]); 
-        // $posts = DB::table('posts')->delete(3);
-        // $posts = DB::table('posts')->where("id",5)->update([
-        //     'title' => 'Updated Post',
-        //     'content' => 'This is the updated content of the post.',
-        //     'is_published' => 1,
-        // ]);
+    // public function index()
+    // {
+    // //     $post =DB::table('posts')->get(); 
+    // //    $post = DB::table('posts')->insert([
+    // //         'title' => 'Sample Post',
+    // //         'content' => 'This is a sample post content.',
+    // //         'is_published' => 1,
+    // //     ]); 
+    //     // $posts = DB::table('posts')->delete(3);
+    //     // $posts = DB::table('posts')->where("id",5)->update([
+    //     //     'title' => 'Updated Post',
+    //     //     'content' => 'This is the updated content of the post.',
+    //     //     'is_published' => 1,
+    //     // ]);
 
-        $posts = Post::all(); // Fetch all posts from the database
-        // $posts = Post::withoutGlobalScope('is_published')->get();
-        // $posts = Post::Published()->where("id", ">" , "3")->get();
-        // $posts = Post::Published(0)->where("id", ">" , "3")->get();
-        // dd($posts); // This will dump the post data to the screen for debugging
+    //     $posts = Post::all(); // Fetch all posts from the database
+    //     // $posts = Post::withoutGlobalScope('is_published')->get();
+    //     // $posts = Post::Published()->where("id", ">" , "3")->get();
+    //     // $posts = Post::Published(0)->where("id", ">" , "3")->get();
+    //     // dd($posts); // This will dump the post data to the screen for debugging
 
-        return view('post', compact('posts'));
-    }
+    //     return view('post', compact('posts'));
+    // }
 }
